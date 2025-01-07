@@ -1,8 +1,10 @@
-# Arduino Contoller 
-An arduino controller that can choose between multiple modes. This controller is used specifically for our Arduino design and code. It's meant to be a controller for our Arduino Smart Car
+# Arduino Controller 
+An arduino controller that can choose between multiple modes. This controller is used specifically for our Arduino design and code. It's meant to be a controller for our Arduino Smart Car.
 
 ### Project Description
-This project is made with the purpose of controlling the smart car made with Arduino
+This project is made with the purpose of controlling the smart car made with Arduino. The smart car has 4 function that can be chosen from with the application. The four functions include Line Tracing, Object Avoidance, Both Line Tracing and Object Avoidance, and Remote Control Mode. The main function of this application is to control the robot with simple user interface and choose between modes the robot can perform. The display UI is as follows:
+
+
 
 ```
 #include <AFMotor.h>
