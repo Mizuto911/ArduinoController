@@ -74,6 +74,8 @@ if(Serial.available() > 0){
 - Ultrasonic Sensor
 - 2 or 3 18650 Battery
 
+![Diagram](imageFiles/wiring_diagram.png)
+
 ## Example Code
 
 Here is the fully working code of the Arduino. If you have used other types of Motor Shield Drivers, make sure to revise the code accordingly. Make sure to also download and install the Adafruit Motor Shield Library at their [Official Website](https://github.com/adafruit/Adafruit-Motor-Shield-library).
