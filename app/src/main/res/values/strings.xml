@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ArduinoController</string>
+    <string name="cautionText">Note: Make sure the device you\'re connecting to is a HC-05 Bluetooth Module, Otherwise the app will crash when you try to connect.\n\nThis App is Specifically made for our Group\'s Arduino Code. It is not a general smart car controller.</string>
+</resources>
