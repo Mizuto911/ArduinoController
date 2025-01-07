@@ -72,6 +72,7 @@ if(Serial.available() > 0){
 - 2 IR Sensors
 - Servo Motor
 - Ultrasonic Sensor
+- 2 or 3 18650 Battery
 
 ## Example Code
 
