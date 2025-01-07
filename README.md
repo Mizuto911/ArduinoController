@@ -1,10 +1,81 @@
 # Arduino Controller 
 An arduino controller that can choose between multiple modes. This controller is used specifically for our Arduino design and code. It's meant to be a controller for our Arduino Smart Car.
 
-### Project Description
-This project is made with the purpose of controlling the smart car made with Arduino. The smart car has 4 function that can be chosen from with the application. The four functions include Line Tracing, Object Avoidance, Both Line Tracing and Object Avoidance, and Remote Control Mode. The main function of this application is to control the robot with simple user interface and choose between modes the robot can perform. The display UI is as follows:
+## Project Description
+This project is made with the purpose of controlling the smart car made with Arduino. The smart car has 4 function that can be chosen from with the application. The four functions include Line Tracing, Object Avoidance, Both Line Tracing and Object Avoidance, and Remote Control Mode. The main function of this application is to control the robot with simple user interface and choose between modes the robot can perform. The project in compiled using Android Studio and will be used in conjunction with Arduino IDE Serial to exchange data. The display UI is as follows:
 
+![UIPreview](imageFiles/repo1.png)
+![UIPreview](imageFiles/repo2.png)
 
+## How to Install or Use the Project
+### To use this project you need to install the following:
+- Android Studio
+- Arduino IDE
+
+You need to load the project folder in Android Studio to use it, or alternatively just download the APK in the `app/build/release/app_release.apk`.
+
+### In Arduino IDE, you need to create a program that takes get data from the app and perform tasks based on those results.
+- **UP Arrow** sends a 'W' char byte when pushed down and 'w' char byte when released.
+- **DOWN Arrow** sends a 'S' char byte when pushed down and 's' char byte when released.
+- **LEFT Arrow** sends a 'A' char byte when pushed down and 'a' char byte when released.
+- **RIGHT Arrow** sends a 'D' char byte when pushed down and 'd' char byte when released.
+- **LINE TRACING Button** sends a 'L' char byte.
+- **OBJECT AVOIDANCE  Button** sends a 'O' char byte.
+- **LINE TRACING AND OBJECT AVOIDANCE Button** sends a 'B' char byte.
+- **REMOTE CONTROL Button** sends a 'R' char byte.
+- **NO MODE Button** sends a 'N' char byte.
+
+### Using these char bytes in the bitstream, you can code the program to perform specific tasks depending on what char byte is received by the Arduino Serial. 
+
+The example is below, however if you would like a full working code you may proceed to the end of this file to look at it.
+
+```
+if(Serial.available() > 0){
+    char moveCommand = Serial.read();
+}
+
+  if(moveCommand == 'W'){
+    //Move Forward
+  }
+  else if(moveCommand == 'w'){
+    //Stop
+  }
+
+  if(moveCommand == 'S'){
+    //Move Backward
+  }
+  else if(moveCommand == 's'){
+    //Stop
+  }
+
+  if(moveCommand == 'A'){
+    //Move Left
+  }
+  else if(moveCommand == 'a'){
+    //Stop
+  }
+
+  if(moveCommand == 'D'){
+    //Move Right
+  }
+  else if(moveCommand == 'd'){
+    //Stop
+  }
+```
+
+### Next is to build the actual smart car robot. The following are the components and the wiring diagram.
+- Arduino UNO
+- L293D Motor Shield
+- 4 DC Motors
+- 4 Wheels
+- HC-05 Bluetooth Module
+- 2 IR Sensors
+- Servo Motor
+- Ultrasonic Sensor
+
+## Example Code
+
+Here is the fully working code of the Arduino. If you have used other types of Motor Shield Drivers, make sure to revise the code accordingly. Make sure to also download and install the Adafruit Motor Shield Library at their [Official Website](https://github.com/adafruit/Adafruit-Motor-Shield-library).
 
 ```
 #include <AFMotor.h>
