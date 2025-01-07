@@ -74,7 +74,7 @@ if(Serial.available() > 0){
 - Ultrasonic Sensor
 - 2 or 3 18650 Battery
 
-![Diagram](imageFiles/wiring_diagram.png)
+![Diagram](imageFiles/wiring_diagram.jpg)
 
 ## Example Code
 
